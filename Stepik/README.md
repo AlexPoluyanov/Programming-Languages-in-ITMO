@@ -281,7 +281,7 @@ int sum(int*, int);
 <pre>// Определите массив в котором будут 8*1024*1024 чисел
 // Массив не должен занимать больше 40 МБ памяти
 
-uint32_t data[8*1024*1024] = {0};
+uint32_t data[8\*1024\*1024] = {0};
 
 // Определите функцию count_gt
 // Она должна вернуть количество чисел в data, которые больше LIMIT
@@ -295,7 +295,8 @@ size_t count_gt(uint32_t * array, size_t size) {
             count++;
     }
     return count;
-}</pre>
+}
+</pre>
 <pre>size_t count_zeroes(const void* data, size_t sz ) {
     size_t answer = 0;
     for (int8_t* p = (int8_t*)data; p < (int8_t*)data+sz; p++) {
