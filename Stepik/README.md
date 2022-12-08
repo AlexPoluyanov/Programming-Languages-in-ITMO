@@ -313,7 +313,7 @@ size_t count_gt(uint32_t * array, size_t size) {
        ✅ -1<br>
        ✅ 1024<br>
        ✅ ошибка</p>
-<pre>// заполнить уже выделенный массив array размера size числами
+<pre><code>// заполнить уже выделенный массив array размера size числами
 void array_int_fill( int64_t* array, size_t size )
 {
     for (size_t i = 0; i < size; i++, array++) {
@@ -322,11 +322,11 @@ void array_int_fill( int64_t* array, size_t size )
 }
 
 // Считать размер массива в *size, выделить память под массив и заполнить его числами.
-int64_t* array_int_read( size_t* size )
+int64_t * array_int_read( size_t\* size )
 {
     size_t s;
     scanf("%zu", &s);
-    int64_t *array = (int64_t*)malloc(s * sizeof (int64_t));
+    int64_t *array = (int64_t\*)malloc(s * sizeof (int64_t));
     array_int_fill(array, s);
     *size = s;
     return array;
@@ -338,7 +338,7 @@ int64_t* array_int_read( size_t* size )
     for (; size; size--)
         if (array[size - 1] < array[min]) min = size - 1;
     return array + min;
-}</pre>
+}</code></pre>
 
 <pre>// эти функции вы уже реализовали на предыдущих шагах
 int64_t* array_int_read( size_t* size );
@@ -525,7 +525,7 @@ void array_int_free( struct array_int a ) {
         a.size = 0;
     } 
 }</pre>
-<pre>/* Вы можете пользоваться этими функциями из предыдущих заданий */
+<pre><code>/* Вы можете пользоваться этими функциями из предыдущих заданий */
 size_t read_size() { size_t i; scanf("%zu", &i); return i; }
 void array_int_fill( int64_t* array, size_t sz );
 
@@ -548,11 +548,6 @@ struct maybe_array_int {
   struct array_int value;
   bool valid;
 };
-
-//struct array_int {
-//  int64_t* data;
-//  size_t size;
-//};
 
 struct maybe_array_int some_array_int(struct array_int array) {
   return (struct maybe_array_int) { array, true };
@@ -608,9 +603,10 @@ struct array_array_int array_array_int_read() {
     const size_t size = read_size();
     struct array_array_int array_array;    
     array_array.data = malloc( sizeof(struct array_int) * size);
-    for (size_t i=0; i<size; i++) {
-        array_array.data[i] = array_int_read();  
-    }
+    for (size_t i = 0; i < size; i++) {
+        array_array.data[i] = array_int_read();   
+    } 
+     
     array_array.size = size;
     return array_array;
 }
@@ -623,7 +619,6 @@ void array_array_int_print( struct array_array_int array) {
     }
 }
 
-/*  --- min/normalize ---  */
 
 // найти минимальный элемент в массиве массивов
 struct maybe_int64 array_array_int_min( struct array_array_int array ) {
@@ -652,10 +647,10 @@ void array_array_int_normalize( struct array_array_int array, int64_t m) {
 }
 
 void array_array_int_free( struct array_array_int array ) {
-  for (size_t i=0; i<array.size; i++)
-    if (array.data[i].size>0) free(array.data[i].data);
+  for (size_t i=0; i < array.size; i++)
+    if (array.data[i].size > 0) free(array.data[i].data);
   free(array.data);
-}</pre>
+}</code></pre>
 
 <pre>
 struct stack {
@@ -1182,7 +1177,7 @@ struct vm_state state_create(const union ins *ip) {
 
 // Как правильно деинициализировать состояние, освободить все ресурсы?
 void state_destroy(struct vm_state *state) {
-    stack_destroy(&state->data_stack);
+    stack_destroy(&state -> data_stack);
 }
 
 
@@ -1195,8 +1190,8 @@ void stack_destroy(struct stack *s);
 bool stack_push(struct stack *s, int64_t value);
 struct maybe_int64 stack_pop(struct stack *s);
 
-/* Опишите цикл интерпретации с выборкой и выполнением команд (пока не выполним STOP) */
-void interpret(struct vm_state *state) {
+/* Опишите цикл интерпретации с выборкой и выполнением команд (пока не выполним STOP) \*/
+void interpret(struct vm_state \*state) {
     const union ins* cur = state->ip;
     while (cur->opcode != BC_STOP) {
         switch (cur->opcode) {
@@ -1355,9 +1350,9 @@ void interpret_ineg( struct vm_state* state ) { lift_unop (& state->data_stack, 
 <pre>
 #ifndef STACK_H
 #define STACK_H
-#include <stdbool.h>
-#include <stdint.h>
-#include <stddef.h>
+#include &lt;stdbool.h&gt;
+#include &lt;stdint.h&gt;
+#include &lt;stddef.h&gt;
 
 typedef struct {
   int64_t value;
