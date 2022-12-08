@@ -48,12 +48,12 @@
 <h4 id="1.2">1.2 Введение</h4>
 <p>❔:   Nevergonna give you up</p><br>
 
-<pre>printf("%d", 17283+(5*6*7*8));</pre>
-<pre>void print_newline(){
+<pre><code>printf("%d", 17283+(5*6*7*8));</code></pre>
+<pre><code>void print_newline(){
   printf("\n");
-}</pre>
+}</code></pre>
 
-<pre>greet();
+<pre><code>greet();
 b();
 print_newline();
 greet();
@@ -61,18 +61,18 @@ v();
 print_newline();
 greet();
 b();
-print_newline();</pre>
-<pre>greet(10);
+print_newline();</code></pre>
+<pre><code>greet(10);
 greet(20);
-greet(42);</pre>
+greet(42);</code></pre>
 
-<pre>void f(int first, int second){
+<pre><code>void f(int first, int second){
   printf("%d", first+second);
-}</pre>
+}</code></pre>
 
-<pre>int avg3(int first, int second, int third){
+<pre><code>int avg3(int first, int second, int third){
   return (first+second+third)/3;
-}</pre>
+}</code></pre>
 
 <h4 id="1.3">1.3 Условные переходы</h4>
 <p>❔:   123</p>
@@ -85,7 +85,7 @@ greet(42);</pre>
        ✅ 1 && 9<br>
        ✅ 0 || 9</p>
        
-<pre>// Возвращает 1 если в числе одна цифра, иначе 0
+<pre><code>// Возвращает 1 если в числе одна цифра, иначе 0
 int is_single_digit(int n) {
     return 0 <= n && n <= 9;
 }
@@ -93,24 +93,24 @@ int is_single_digit(int n) {
 // Возвращает 1 если в числе ровно две цифры, иначе 0
 int is_double_digit(int n) {
     return 10 <= n && n <= 99;
-}</pre>
+}</code></pre>
 <p>❔:✅ 4 > 3 && print(10)<br>
        ✅ print(0) && print(9)<br>
        ✅ 4 < 3 || print(42) || print(88)</p>
-<pre>int is_sorted3(int a, int b, int c) {
+<pre><code>int is_sorted3(int a, int b, int c) {
     if (a>b && b>c) return -1;
     else return c>b && b>a;
-}</pre>
-<pre>int max3(int a, int b, int c) {
+}</code></pre>
+<pre><code>int max3(int a, int b, int c) {
 	if (a < b) { a = b; }
 	if (a < c) { a = c; }
 	return a;
-}</pre>
-<pre>void fizzbuzz (int num) {
+}</code></pre>
+<pre><code>void fizzbuzz (int num) {
     if (!(num > 0)) {printf("no"); return;}
     if (num % 3 == 0) {printf("fizz");}
     if (num % 5 == 0) {printf("buzz");}
-}</pre>
+}</code></pre>
 
 
 <h4 id="1.4">1.4 Потоки ввода и вывода</h4>
@@ -127,15 +127,15 @@ int is_double_digit(int n) {
 <p>❔:  ✅ a = 20 b = 20</p>
 <p>❔:  ✅ a = 10 b = 10</p>
 <p>❔:  ✅ a = 40 b = 10 c = 30</p>
-<pre>int main() {
+<pre>
+<code>int main() {
   int input1 = read_int(); // читаем первое число
   int input2 = read_int(); // читаем второе число<br>
-
   printf("%d", input1 + input2); // печатаем сумму
-
   return 0;
-}</pre>
-<pre>int discriminant(int a, int b, int c) { return b*b-4*a*c; }
+}</code></pre>
+
+<pre><code>int discriminant(int a, int b, int c) { return b*b-4*a*c; }
 
 int root_count(int d) { return (d > 0) - (d < 0) + 1; }
 
@@ -143,26 +143,26 @@ int main() {
     int a = read_int(); int b = read_int(); int c = read_int();
     printf ("%d", root_count(discriminant(a, b, c)));
     return 0;
-}</pre>
+}</code></pre>
 
 
 <h4 id="1.6">1.6 Циклы</h4>
-<pre>int main() {
+<pre><code>int main() {
     int i = read_int(); 
     if(i > 10) printf("No");
     while(i <= 10) {
         printf("%d ", i++);
     }
     return 0;
-}</pre>
-<pre>int is_square(int n) {
+}</code></pre>
+
+<pre><code>int is_square(int n) {
     int i = 0;
     while (i * i < n) i++;
     return i * i == n;
-}</pre>
+}</code></pre>
 
-<pre>
-int main()
+<pre><code>int main()
 {
     for (int i = 1; i <= 100; i++) {
         printf("%d: ", i);
@@ -171,17 +171,16 @@ int main()
         }
         puts("");
     }
-
     return 0;
 }
-</pre>
+</code></pre>
 
-<pre>int is_prime(int n) {
+<pre><code>int is_prime(int n) {
     for (int i = 2; i < n; i++) {
         if (n % i == 0) return 0;
     }
     return n > 1;
-}</pre>
+}</code></pre>
 
 <h4 id="1.7">1.7 Массивы и указатели</h4>
 <p>❔:  ✅ x == 10<br>
@@ -189,21 +188,22 @@ int main()
        ✅ &p == 2056<br>
        ✅ p == 1016<br>
        ✅ *p == 10</p>
-<pre>void swap(int* a, int* b)
+       
+<pre><code>void swap(int* a, int* b)
 {
     int c = *b;
     *b = *a;
     *a = c;
-}</pre>
-<pre>void normalize(int *n) {
+}</code></pre>
+
+<pre><code>void normalize(int *n) {
     for (; *n % 2 == 0 && *n > 0; *n /= 2);
-}</pre>
-<pre>
-void factorize( int n, int* a, int* b )
+}</code></pre>
+
+<pre><code>void factorize( int n, int* a, int* b )
 {
     *a = 1;
     *b = n;
-    
     for ( int i=2; i <= n/2; i = i + 1 ) {
         if ( n % i == 0 ) {
             *a = i;
@@ -211,9 +211,9 @@ void factorize( int n, int* a, int* b )
             return;
         }
     }
-}
-</pre>
-<pre>void swap( int* a, int* b) {
+}</code></pre>
+
+<pre><code>void swap( int* a, int* b) {
     int c = *a;
     *a = *b;
     *b = c;
@@ -226,13 +226,13 @@ void array_reverse(int* array, int size) {
 
 void array_reverse_ptr(int* array, int* limit) {
     array_reverse( array, limit - array );
-}</pre>
-<pre>void array_fib(int* array, int* limit) {
+}</code></pre>
+<pre><code>void array_fib(int* array, int* limit) {
     for (int i = 0; i < limit - array; i++) {
         if (i < 2) array[i] = 1;
         else array[i] = array[i - 2] + array[i - 1];
     }
-}</pre>
+}</code></pre>
 <p>❔:  ✅ &p == 2056<br>
        ✅ &pp == 8000<br>
        ✅ pp == 2056<br>
@@ -242,13 +242,13 @@ void array_reverse_ptr(int* array, int* limit) {
        ✅ pp[0][0] == 10<br>
        ✅ *pp[0] == 10</p>
 
-<pre>int array_contains(int* array, int* limit, int** position) {
+<pre><code>int array_contains(int* array, int* limit, int** position) {
     for (*position = array; *position < limit; ++(*position))
         if (predicate(**position))
             return 1;
     return 0;
-}</pre>
-<pre>int is_whitespace(char c) { return c == ' ' || c == '\t' || c == '\n' || c == '\0'; }
+}</code></pre>
+<pre><code>int is_whitespace(char c) { return c == ' ' || c == '\t' || c == '\n' || c == '\0'; }
 
 int string_count(char* str) {
     int count = 0;
@@ -262,23 +262,25 @@ int string_words(char* str) {
         if (!is_whitespace(str[i]) && is_whitespace(str[i+1])) { count++; }
     }
     return count;
-}</pre>
+}</code></pre>
 
 <h4 id="1.8">1.8 Структура кода</h4>
-<pre>void sum(int*, int*, int);</pre>
+<pre><code>void sum(int*, int*, int);</code></pre>
 
-<pre>int stack_push(int);
-int stack_pop(int*);</pre>
+<pre><code>int stack_push(int);
+int stack_pop(int*);</code></pre>
 
-<pre>#ifndef ARITH_H
+<pre><code>#ifndef ARITH_H
 #define ARITH_H
 int sum(int*, int);
-#endif</pre>
+#endif</code></pre>
 
 <h3 id="2">2. Типы</h3>
 <h4 id="2.1">2.1 Обзор системы типов, численные типы</h4>
 <p>❔:  ✅ Да, такой компилятор соответствует стандарту языка</p>
-<pre>// Определите массив в котором будут 8*1024*1024 чисел
+
+<pre>
+<code>// Определите массив в котором будут 8*1024*1024 чисел
 // Массив не должен занимать больше 40 МБ памяти
 
 uint32_t data[8\*1024\*1024] = {0};
@@ -296,14 +298,15 @@ size_t count_gt(uint32_t * array, size_t size) {
     }
     return count;
 }
-</pre>
-<pre>size_t count_zeroes(const void* data, size_t sz ) {
+</code></pre>
+
+<pre><code>size_t count_zeroes(const void* data, size_t sz ) {
     size_t answer = 0;
     for (int8_t* p = (int8_t*)data; p < (int8_t*)data+sz; p++) {
         answer += !*p;
     }
     return answer;
-}</pre>
+}</code></pre>
 
 <h4 id="2.2">2.2 Интерлюдия. Динамическое выделение памяти</h4>
 <p>❔:  ✅ 0<br>
@@ -313,6 +316,7 @@ size_t count_gt(uint32_t * array, size_t size) {
        ✅ -1<br>
        ✅ 1024<br>
        ✅ ошибка</p>
+       
 <pre><code>// заполнить уже выделенный массив array размера size числами
 void array_int_fill( int64_t* array, size_t size )
 {
@@ -330,9 +334,9 @@ int64_t * array_int_read( size_t\* size )
     array_int_fill(array, s);
     *size = s;
     return array;
-}</pre>
+}</code></pre>
 
-<pre>int64_t* array_int_min( int64_t* array, size_t size )
+<pre><code>int64_t* array_int_min( int64_t* array, size_t size )
 {
     int64_t min = 0;
     for (; size; size--)
@@ -340,7 +344,7 @@ int64_t * array_int_read( size_t\* size )
     return array + min;
 }</code></pre>
 
-<pre>// эти функции вы уже реализовали на предыдущих шагах
+<pre><code>// эти функции вы уже реализовали на предыдущих шагах
 int64_t* array_int_read( size_t* size );
 int64_t* array_int_min( int64_t* array, size_t size); 
 
@@ -354,9 +358,9 @@ void perform() {
     int64_t* array = array_int_read(&size);
     intptr_print(array_int_min(array, size));
     free(array);
-  }</pre>
+  }</code></pre>
   
-<pre>// Вам доступны эти функции из прошлых заданий
+<pre><code>// Вам доступны эти функции из прошлых заданий
 size_t read_size();
 void array_int_fill( int64_t* array, size_t size );
 int64_t* array_int_read( size_t* size );
@@ -378,14 +382,14 @@ void marray_print(int64_t** marray, size_t* sizes, size_t rows) {
         array_int_print( marray[i], sizes[i] );
         print_newline();
     }
-}</pre>
+}</code></pre>
 
-<pre>void marray_free( int64_t** marray, size_t rows ) {
+<pre><code>void marray_free( int64_t** marray, size_t rows ) {
   for(size_t i = 0; i < rows; i++) free(marray[i]);
   free(marray);
-}</pre>
+}</code></pre>
 
-<pre>// Вам доступны следующие функции:
+<pre><code>// Вам доступны следующие функции:
 size_t read_size();
 int64_t* array_int_min( int64_t* array, size_t size );
 int64_t** marray_read( size_t* rows, size_t* sizes[] );
@@ -434,12 +438,13 @@ void perform() {
     marray_print(marray, sizes, rows);
     marray_free( marray, rows );
     free(sizes);
-}</pre>
+}</code></pre>
 
 <h4 id="2.3">2.3 Структуры</h4>
 <p>❔:  ✅ Поля структуры расположены в памяти последовательно, возможны пропуски между ними</p>
 <p>❔:  ✅ Можно создать массив из таких структур</p>
-<pre>void maybe_int64_print(struct maybe_int64 i) 
+
+<pre><code>void maybe_int64_print(struct maybe_int64 i) 
 {
     if (i.valid != true)
         printf("None");
@@ -454,9 +459,9 @@ struct maybe_int64 maybe_int64_min(struct maybe_int64 a, struct maybe_int64 b)
     if (!a.valid || (b.valid && a.value > b.value))
         return (b);
     return (a);
-}</pre>
+}</code></pre>
 
-<pre>// Чтенине размера массива или количество строк (массивов)
+<pre><code>// Чтенине размера массива или количество строк (массивов)
 size_t read_size(){ 
     size_t sz = 0; 
     scanf("%zu", &sz); 
@@ -524,7 +529,8 @@ void array_int_free( struct array_int a ) {
         free(a.data); 
         a.size = 0;
     } 
-}</pre>
+}</code></pre>
+
 <pre><code>/* Вы можете пользоваться этими функциями из предыдущих заданий */
 size_t read_size() { size_t i; scanf("%zu", &i); return i; }
 void array_int_fill( int64_t* array, size_t sz );
@@ -652,8 +658,7 @@ void array_array_int_free( struct array_array_int array ) {
   free(array.data);
 }</code></pre>
 
-<pre>
-struct stack {
+<pre><code>struct stack {
   size_t count;
   struct array_int data;
 };
@@ -699,12 +704,12 @@ void stack_print( const struct stack* s ) {
     print_int64( array_int_get( s->data, i).value );
     printf(" ");
   }
-}</pre>
+}</code></pre>
 
 
 <h4 id="2.4">2.4 Связный список</h4>
 
-<pre>struct list {
+<pre><code>struct list {
   int64_t value;
   struct list* next;
 };
@@ -713,46 +718,46 @@ struct list* node_create( int64_t value ) {
     struct list* list = malloc( sizeof *list );
     list -> value = value;
     return list;
-}</pre>
+}</code></pre>
 
-<pre>struct list* node_create( int64_t value );
+<pre><code>struct list* node_create( int64_t value );
 
 void list_add_front( struct list** old, int64_t value ) {
     struct list* link = node_create(value);
     link -> next = *old;
     *old = link;
-}</pre>
+}</code></pre>
 
-<pre>size_t list_length(const struct list* l) 
+<pre><code>size_t list_length(const struct list* l) 
 {
     if (l == NULL){
         return 0;
     }
     return 1 + list_length(l->next);
-}</pre>
+}</code></pre>
 
-<pre>void list_destroy( struct list* list ) {
+<pre><code>void list_destroy( struct list* list ) {
   if (list) {
     list_destroy(list->next);
     free(list);
   }
-}</pre>
+}</code></pre>
 
-<pre>struct list* list_last( struct list * list ) {
+<pre><code>struct list* list_last( struct list * list ) {
     while (list && list->next) {
 		list = list -> next;
 	}
 	return list;
-}</pre>
+}</code></pre>
 
-<pre>void list_add_back( struct list** old, int64_t value ) {
+<pre><code>void list_add_back( struct list** old, int64_t value ) {
     if (*old == NULL){
         *old = node_create(value);
         return;
     }
     list_last(*old)->next=node_create(value);
-}</pre>
-<pre>int64_t list_sum( const struct list* list ) {
+}</code></pre>
+<pre><code>int64_t list_sum( const struct list* list ) {
     int64_t sum = 0;
     if(list != NULL){
     while(list -> next != NULL){
@@ -762,27 +767,30 @@ void list_add_front( struct list** old, int64_t value ) {
     sum += list -> value;
     }
     return sum;
-}</pre>
-<pre>struct maybe_int64 list_at(  const struct list* list, size_t idx ) {
+}</code></pre>
+
+<pre><code>struct maybe_int64 list_at(  const struct list* list, size_t idx ) {
 	while (list && idx--) { list = list->next; }
     
     return list 
         ? some_int64(list->value) 
         : none_int64;
-}</pre>
-<pre>struct list* list_reverse( struct list const * list ) {
+}</code></pre>
+
+<pre><code>struct list* list_reverse( struct list const * list ) {
   struct list* new = NULL;
   for (struct list const* current = list; current ; current = current -> next ) {
     list_add_front( &new, current-> value );
   }
   return new;
-}</pre>
-<pre>struct maybe_int64 maybe_read_int64() {
+}</code></pre>
+<pre><code>struct maybe_int64 maybe_read_int64() {
     struct maybe_int64 read;
     read.valid = (scanf("%" SCNd64, &read.value) == 1);
     return read;
-}</pre>
-<pre>struct list* list_read() {
+}</code></pre>
+
+<pre><code>struct list* list_read() {
   struct list* list = NULL;
   struct maybe_int64 t = maybe_read_int64();
   if (t.valid) {
@@ -790,12 +798,12 @@ void list_add_front( struct list** old, int64_t value ) {
     list->next = list_read();
   }
   return list;
-}</pre>
+}</code></pre>
 
 <h4 id="2.5">2.5 Объединения и перечисления</h4>
 <p>❔:  ✅ 64</p>
 
-<pre>enum either_type { ET_INT, ET_STRING };
+<pre><code>enum either_type { ET_INT, ET_STRING };
 
 struct either_int_string {
   enum either_type type;
@@ -840,9 +848,9 @@ void print(struct either_int_string e) {
       break;
   }
   }
-}</pre>
+}</code></pre>
 
-<pre>struct heap_string {
+<pre><code>struct heap_string {
   char* addr;
 };
 
@@ -860,13 +868,13 @@ struct heap_string halloc( const char* s ) {
 // освободить память
 void heap_string_free( struct heap_string h ) {
     free(h.addr);
-}</pre>
+}</code></pre>
 
 <h4 id="2.6">2.6 Функции</h4>
 
-<pre>typedef char ftype(const float*, const float*);</pre>
+<pre><code>typedef char ftype(const float*, const float*);</code></pre>
 
-<pre>// Мы хотим, чтобы в структуре user хранились ссылки только на строчки из кучи.
+<pre><code>// Мы хотим, чтобы в структуре user хранились ссылки только на строчки из кучи.
 typedef struct { char* addr; } string_heap ;
 
 /*  Тип для идентификаторов пользователей
@@ -940,9 +948,9 @@ int enum_city_compare(const struct user* x, const struct user* y)
 void users_sort_city(struct user users[], size_t sz) 
 {
     user_qsort(users, sz, &enum_city_compare);
-}</pre>
+}</code></pre>
 
-<pre>enum move_dir { MD_UP, MD_RIGHT, MD_DOWN, MD_LEFT, MD_NONE };
+<pre><code>enum move_dir { MD_UP, MD_RIGHT, MD_DOWN, MD_LEFT, MD_NONE };
 
 typedef void move_callback(enum move_dir);
 
@@ -1014,12 +1022,12 @@ void unregister_all_callbacks(struct robot* robot) {
 
 void move(struct robot* robot, enum move_dir dir) {
     struct_list_callback_call_all(robot -> head, dir);
-}</pre>
+}</code></pre>
 
 
 <h4 id="2.7">2.7 Функции высшего порядка</h4>
 
-<pre>void print_int64(int64_t i);
+<pre><code>void print_int64(int64_t i);
 
 /* Запустить функцию f на каждом элементе списка  */
 void list_foreach(const struct list* l, void (f)(int64_t)) {
@@ -1032,9 +1040,9 @@ void list_foreach(const struct list* l, void (f)(int64_t)) {
 /* Вывести список с помощью foreach и дополнительной функции */
 void list_print(const struct list* l) { 
     list_foreach(l, print_int64_space);
-}</pre>
+}</code></pre>
 
-<pre>/* Изменить каждый элемент списка с помощью функции f  */
+<pre><code>/* Изменить каждый элемент списка с помощью функции f  */
 void list_map_mut(struct list* l, int64_t (f) (int64_t))  {
     while(l != NULL){
         l->value = f(l->value);
@@ -1047,9 +1055,9 @@ static int64_t triple( int64_t x ) { return x * 3; }
 /* Используя list_map_mut умножьте все элементы списка на 3 */
 void list_triple(struct list* l ) { 
     list_map_mut(l, triple);
-}</pre>
+}</code></pre>
 
-<pre>/* Вы можете пользоваться следующими функциями */
+<pre><code>/* Вы можете пользоваться следующими функциями */
 void print_int64(int64_t i);
 struct list* node_create( int64_t value );
 
@@ -1081,9 +1089,9 @@ struct list* list_copy( struct list const* l ) {
 typedef int64_t (my_mapper) (int64_t);
 struct list* list_abs( struct list const* l ) {
     return list_map(l, (my_mapper*) abs);
-}</pre>
+}</code></pre>
 
-<pre>/* Вы можете пользоваться этими функциями */
+<pre><code>/* Вы можете пользоваться этими функциями */
 void print_int64(int64_t i);
 struct list* node_create( int64_t value );
 void list_destroy( struct list* list );
@@ -1103,9 +1111,9 @@ int64_t list_fold(const struct list* l, int64_t init, folding f) {
 
 int64_t list_sum(const struct list* l) {
     return list_fold(l, 0, sum);
-}</pre>
+}</code></pre>
 
-<pre>void print_int64(int64_t i);
+<pre><code>void print_int64(int64_t i);
 
 struct list* node_create( int64_t value );
 void list_destroy( struct list* list );
@@ -1123,7 +1131,7 @@ struct list* create_node(int64_t value, struct list* next) {
 struct list* list_iterate( int64_t init, size_t sz, int64_t(f)(int64_t)) {
     if (sz == 0) return NULL;
     return create_node(init, list_iterate(f(init), --sz, f));
-}</pre>
+}</code></pre>
 
 
 
@@ -1135,7 +1143,8 @@ struct list* list_iterate( int64_t init, size_t sz, int64_t(f)(int64_t)) {
 <h4 id="3.1">3.1 Декларативность. Стёк 1.0</h4>
 <p>❔:  ✅ 42</p>
 <p>❔:  ✅ 80 1</p>
-<pre>const union ins program[] = {
+
+<pre><code>const union ins program[] = {
     {BC_IREAD},
     {.as_arg64 = {BC_PUSH, .arg = 10}},
     {BC_ISUB},
@@ -1143,10 +1152,12 @@ struct list* list_iterate( int64_t init, size_t sz, int64_t(f)(int64_t)) {
     {BC_IDIV},
     {BC_IPRINT},
     {BC_STOP}
-};</pre>
+};</code></pre>
+
 <p>❔:  ✅ 1</p>
 <p>❔:  ✅ 3</p>
-<pre>/* Описание инструкций (см. предыдущий шаг) */
+
+<pre><code>/* Описание инструкций (см. предыдущий шаг) */
 enum opcode { BC_PUSH, BC_IPRINT, BC_IREAD, BC_IADD, BC_STOP };
 
 struct bc_noarg {
@@ -1226,9 +1237,9 @@ void interpret_program(const union ins *program) {
   struct vm_state state = state_create(program);
   interpret(&state);
   state_destroy(&state);
-}</pre>
+}</code></pre>
 
-<pre>void interpret_push(struct vm_state* state) {
+<pre><code>void interpret_push(struct vm_state* state) {
   stack_push(& state->data_stack, state->ip->as_arg64.arg);
 }
 
@@ -1263,10 +1274,10 @@ void interpret(struct vm_state* state) {
     for (; state->ip->opcode != BC_STOP; state->ip++) {
       interpreters[state->ip->opcode](state);
     }
-}</pre>
+}</code></pre>
 
 
-<pre>/* Вам уже доступны функции: */
+<pre><code>/* Вам уже доступны функции: */
 bool stack_push( struct stack* s, int64_t value );
 struct maybe_int64 stack_pop( struct stack* s );
 
@@ -1319,9 +1330,9 @@ void interpret_imul( struct vm_state* state ) { lift_binop(& state->data_stack, 
 void interpret_idiv( struct vm_state* state ) { lift_binop(& state->data_stack, i64_div); }
 void interpret_icmp( struct vm_state* state ) { lift_binop(& state->data_stack, i64_cmp); }
 
-void interpret_ineg( struct vm_state* state ) { lift_unop (& state->data_stack, i64_neg);  }</pre>
+void interpret_ineg( struct vm_state* state ) { lift_unop (& state->data_stack, i64_neg);  }</code></pre>
 
-<pre>void interpret(struct vm_state* state, ins_interpreter * const (actions)[]) {
+<pre><code>void interpret(struct vm_state* state, ins_interpreter * const (actions)[]) {
     for (; state->ip ;) {
         const union ins* ins = state->ip;
         const struct ins_descr* ins_descr = instructions + ins->opcode;
@@ -1338,17 +1349,17 @@ void interpret_ineg( struct vm_state* state ) { lift_unop (& state->data_stack, 
         actions[ins->opcode](state);
         if (!ins_descr->affects_ip) { state->ip = state->ip + 1; }
     }
-}</pre>
+}</code></pre>
 
 
 
 
 
-<h4 id="3.2">Модульность и абстракция</h4>
+<h4 id="3.2">3.2 Модульность и абстракция</h4>
 <p>❔:  ✅ cube<br>
        ✅ square</p>
-<pre>
-#ifndef STACK_H
+       
+<pre><code>#ifndef STACK_H
 #define STACK_H
 #include &lt;stdbool.h&gt;
 #include &lt;stdint.h&gt;
@@ -1391,9 +1402,9 @@ struct maybe_item stack_int_pop(struct stack_int *s);
 
 void stack_int_print(struct stack_int const*);
 #endif
-</pre>
+</code></pre>
 
-<pre>struct list {
+<pre><code>struct list {
     item value;
     struct list *next;
 };
@@ -1465,9 +1476,9 @@ static void print_int64_cr(item i) { printf("%" STACK_ITEM_PRI "\n", i.value); }
 
 void stack_int_print(struct stack_int const *s) {
     stack_int_foreach(s, print_int64_cr);
-}</pre>
+}</code></pre>
 
-<pre>static struct stack_interface {
+<pre><code>static struct stack_interface {
     struct stack_int_interface {
         struct stack_int* (*create)();
         bool (*empty)(struct stack_int const*);
@@ -1477,10 +1488,11 @@ void stack_int_print(struct stack_int const *s) {
         struct maybe_item (*pop)(struct stack_int *);
     } int64;
     
-} const stack = {{stack_int_create, stack_int_empty, stack_int_full, stack_int_destroy, stack_int_push, stack_int_pop}};</pre>
+} const stack = {{stack_int_create, stack_int_empty, stack_int_full, stack_int_destroy, stack_int_push, stack_int_pop}};</code></pre>
 
 <p>❔:  ✅ 200</p>
-<pre>static bool divides(int64_t x, int64_t y) { return x % y == 0; }
+
+<pre><code>static bool divides(int64_t x, int64_t y) { return x % y == 0; }
 static void print_int_space(int64_t x) {printf("%" PRId64 " ", x); }
 static int64_t read_int() { int64_t x; scanf("%" PRId64, &x); return x; }
 
@@ -1494,4 +1506,4 @@ void print_divisors(int64_t n) {
     printf("$");
   }
   else{ printf("No");}
-}</pre>
+}</code></pre>
