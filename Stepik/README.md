@@ -285,7 +285,7 @@ int sum(int*, int);
 <code>// Определите массив в котором будут 8*1024*1024 чисел
 // Массив не должен занимать больше 40 МБ памяти
 
-uint32_t data[8\*1024\*1024] = {0};
+uint32_t data[8*1024*1024] = {0};
 
 // Определите функцию count_gt
 // Она должна вернуть количество чисел в data, которые больше LIMIT
@@ -328,11 +328,11 @@ void array_int_fill( int64_t* array, size_t size )
 }
 
 // Считать размер массива в *size, выделить память под массив и заполнить его числами.
-int64_t * array_int_read( size_t\* size )
+int64_t * array_int_read( size_t* size )
 {
     size_t s;
     scanf("%zu", &s);
-    int64_t *array = (int64_t\*)malloc(s * sizeof (int64_t));
+    int64_t *array = (int64_t*)malloc(s * sizeof (int64_t));
     array_int_fill(array, s);
     *size = s;
     return array;
@@ -1203,8 +1203,8 @@ void stack_destroy(struct stack *s);
 bool stack_push(struct stack *s, int64_t value);
 struct maybe_int64 stack_pop(struct stack *s);
 
-/* Опишите цикл интерпретации с выборкой и выполнением команд (пока не выполним STOP) \*/
-void interpret(struct vm_state \*state) {
+/* Опишите цикл интерпретации с выборкой и выполнением команд (пока не выполним STOP) */
+void interpret(struct vm_state *state) {
     const union ins* cur = state->ip;
     while (cur->opcode != BC_STOP) {
         switch (cur->opcode) {
